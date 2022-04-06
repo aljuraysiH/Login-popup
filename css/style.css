@@ -1,0 +1,133 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+body {
+  height: 100vh;
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(121, 106, 9, 1) 0%,
+    rgba(0, 212, 255, 1) 100%
+  );
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.log-button {
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 6px;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+
+  width: 100vw;
+  height: 100vh;
+  z-index: 500;
+  background: rgba(255, 255, 255, 0.13);
+  border-radius: 16px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  transition: all 0.2s;
+}
+
+.popup {
+  position: fixed;
+  top: -150%;
+  left: 50%;
+  opacity: 0;
+
+  color: #0b7285;
+  background: rgba(255, 255, 255, 0.13);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding: 3rem;
+  z-index: 1000;
+  transform: translate(-50%, -50%);
+  transition: all 0.5s;
+}
+.popup__header {
+  font-size: 4rem;
+  margin-bottom: 1em;
+}
+
+.popup__close {
+  cursor: pointer;
+  font-size: 3rem;
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+}
+
+.popup__inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.popup__input {
+  font-size: 3rem;
+  outline: none;
+  border: none;
+  border-radius: 12px;
+  padding: 1rem 4rem;
+  color: inherit;
+}
+.popup__input::placeholder {
+  color: #99e9f2;
+}
+
+.popup__forget {
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  font-size: 1.8rem;
+  color: inherit;
+}
+
+.popup__button {
+  cursor: pointer;
+  font-size: 3rem;
+  border: none;
+  padding: 1rem 4rem;
+  border-radius: 12px;
+  color: #e3fafc;
+  background-color: #0b7285;
+}
+
+.active {
+  /* animation: login 2s; */
+  top: 50%;
+  opacity: 1;
+  transition: all 0.5s;
+}
+
+.hidden {
+  display: none;
+}
